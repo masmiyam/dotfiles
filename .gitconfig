@@ -1,0 +1,8 @@
+[user]
+	name = masamiya
+	email = masahmiya@gmail.com
+[color]
+	ui = auto
+[alias]
+	ci = commit
+	co = checkout

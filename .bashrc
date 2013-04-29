@@ -2,14 +2,23 @@
 stty stop undef
 
 # よく使うエイリアスやら各コマンドのデフォルトのオプションを設定
-alias ls='ls -CF'
-alias ll='ls -AlFh --show-control-chars --color=auto'
-alias la='ls -CFal'
+case "${OSTYPE}" in
+darwin*)
+  alias ls="ls -G"
+  alias ll="ls -lG"
+  alias la="ls -laG"
+  ;;
+linux*)
+  alias ls='ls --color'
+  alias ll='ls -l --color'
+  alias la='ls -la --color'
+  ;;
+esac
+
 alias mv='mv -i'
 alias rm='rm -i'
 alias cp='cp -i'
-alias sc='screen'
-alias ps='ps --sort=start_time'
+#alias ps='ps --sort=start_time'
 
 # プロンプトの表示をカスタマイズ
 export PS1='\[\033[01;32m\]\u@\H\[\033[01;34m\] \w \$\[\033[00m\]'

@@ -37,7 +37,14 @@ set smarttab
 "カーソルを行頭、行末で止まらないようにする
 set whichwrap=b,s,h,l,<,>,[,]
 "検索をファイルの先頭へループしない
-set nowrapscan
+"set nowrapscan
 "ウィンドウを最大化して起動
 au GUIEnter * simalt ~x
 
+set background=dark
+highlight ColorColumn ctermbg=7
+highlight ColorColumn guibg=Gray
+
+syntax enable
+"set background=light
+colorscheme solarized

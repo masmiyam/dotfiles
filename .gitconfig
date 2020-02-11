@@ -1,8 +1,14 @@
 [user]
-	name = masamiya
-	email = masahmiya@gmail.com
+	name = masmiyam
+	email = masmiyam2011@gmail.com
 [color]
 	ui = auto
+[push]
+    default = current
 [alias]
 	ci = commit
 	co = checkout
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true

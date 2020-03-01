@@ -1,44 +1,7 @@
-
-"NeoBundle Scripts-----------------------------
-if &compatible
-  set nocompatible               " Be iMproved
-endif
-
-" Required:
-set runtimepath+=/Users/masmiyam/.vim/bundle/neobundle.vim/
-
-" Required:
-call neobundle#begin(expand('/Users/masmiyam/.vim/bundle'))
-
-" Let NeoBundle manage NeoBundle
-" Required:
-NeoBundleFetch 'Shougo/neobundle.vim'
-
-" Add or remove your Bundles here:
-NeoBundle 'Shougo/neosnippet.vim'
-NeoBundle 'Shougo/neosnippet-snippets'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'ctrlpvim/ctrlp.vim'
-NeoBundle 'flazz/vim-colorschemes'
-
-" You can specify revision/branch/tag.
-NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
-
-" Required:
-call neobundle#end()
-
-" Required:
-filetype plugin indent on
-
-" If there are uninstalled bundles found on startup,
-" this will conveniently prompt you to install them.
-NeoBundleCheck
-"End NeoBundle Scripts-------------------------
-
 "新しい行のインデントを現在行と同じにする
 set autoindent
 "バックアップファイルを作るディレクトリ
-set backupdir=$HOME/vimbackup
+"set backupdir=$HOME/vimbackup
 "ファイル保存ダイアログの初期ディレクトリをバッファファイル位置に設定
 set browsedir=buffer 
 "クリップボードをWindowsと連携
@@ -46,7 +9,7 @@ set clipboard=unnamed
 "Vi互換をオフ
 set nocompatible
 "スワップファイル用のディレクトリ
-set directory=$HOME/vimbackup
+"set directory=$HOME/vimbackup
 "タブの代わりに空白文字を挿入する
 set expandtab
 "変更中のファイルでも、保存しないで他のファイルを表示
@@ -78,10 +41,37 @@ set whichwrap=b,s,h,l,<,>,[,]
 "ウィンドウを最大化して起動
 au GUIEnter * simalt ~x
 
-set background=dark
-highlight ColorColumn ctermbg=7
-highlight ColorColumn guibg=Gray
+
+" Note: Skip initialization for vim-tiny or vim-small.
+if 0 | endif
+
+if &compatible
+  set nocompatible               " Be iMproved
+endif
+
+" Required:
+set runtimepath+=~/.vim/bundle/neobundle.vim/
+set runtimepath+=~/.vim/bundle/vim-colors-solarized
+
+" Required:
+call neobundle#begin(expand('~/.vim/bundle/'))
+
+" Let NeoBundle manage NeoBundle
+" Required:
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+" My Bundles here:
+" Refer to |:NeoBundle-examples|.
+" Note: You don't set neobundle setting in .gvimrc!
+
+call neobundle#end()
+
+" Required:
+filetype plugin indent on
+
+" If there are uninstalled bundles found on startup,
+" this will conveniently prompt you to install them.
 
 syntax enable
-"set background=light
 colorscheme solarized
+set background=dark

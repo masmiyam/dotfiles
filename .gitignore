@@ -4,4 +4,4 @@
 .vimrc_sample
 .git
 *.swp
-id_rsa
+id_rsa.pub
